@@ -7,7 +7,7 @@ class module_serverware {
         $app = '';
         $sys_path = '/etc/';
         $host_path = '/var/';
-	$js_app = 'zPanel';
+		$js_app = 'zPanel';
 
         //This needs to be verified as the Sentora BETA installer created a zPanel directory symlink as well
         /*if(fs_director::CheckFolderExists(fs_director::ConvertSlashes($sys_path.'zpanel')) && fs_director::CheckFolderExists(fs_director::ConvertSlashes($host_path.'zpanel'))){

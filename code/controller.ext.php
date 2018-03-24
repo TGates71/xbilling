@@ -16,8 +16,8 @@ class module_controller {
     static $view;
     static $ok;
     //static $customerror;
-    static $module_db = 'zpanel_xbilling';
-    static $server_app = 'zpanel';
+    static $module_db = 'sentora_xbilling';
+    static $server_app = 'sentora';
     static $server_vars = array();
 
    
@@ -464,7 +464,7 @@ class module_controller {
         
         $currentuser = ctrl_users::GetUserDetail();
         
-   		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+   		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
                     WHERE setting_name='currency' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -479,7 +479,7 @@ class module_controller {
     static function getDefaultSetting($setting_name){
         global $zdbh;
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name=:setting_name AND reseller_ac_id_fk='-1'";
         $bindArray = array(':setting_name'=>$setting_name);
         $zdbh->bindQuery($sql, $bindArray);
@@ -498,7 +498,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='company_name' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='company_name' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -516,7 +516,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='email_address' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='email_address' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -534,7 +534,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name='website_billing_url' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -553,7 +553,7 @@ class module_controller {
         $edit_info = array();
         $res = array();
         
-        $sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+        $sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
                     WHERE setting_name='url_protocol' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -581,7 +581,7 @@ class module_controller {
         $edit_info = array();
         $res = array();
         
-        $sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+        $sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
                     WHERE setting_name='logs_enabled_yn' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -607,7 +607,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='company_logo_path' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='company_logo_path' 
 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
@@ -627,7 +627,7 @@ class module_controller {
 
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='currency' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='currency' 
 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
@@ -647,7 +647,7 @@ class module_controller {
 
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name='country_code' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -666,7 +666,7 @@ class module_controller {
 
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name='billing_enabled_yn' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -685,7 +685,7 @@ class module_controller {
 
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name='recaptcha_disabled_yn' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -703,7 +703,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name='recaptcha_public_key' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -719,7 +719,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings 
  		            WHERE setting_name='recaptcha_private_key' AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -735,7 +735,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='invoice_reminder_days' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='invoice_reminder_days' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -753,7 +753,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='invoice_reminder_message' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='invoice_reminder_message' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -771,7 +771,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='pending_invoice_delete_days' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='pending_invoice_delete_days' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -789,7 +789,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='renewal_reminder_days' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='renewal_reminder_days' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -807,7 +807,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='payment_success_url' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='payment_success_url' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -825,7 +825,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='payment_failure_url' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='payment_failure_url' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -843,7 +843,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='payment_cancel_url' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='payment_cancel_url' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -913,14 +913,14 @@ class module_controller {
             	}
             	
                 if(in_array($key,$setting_keys)){
-                 		$sql = "SELECT setting_id FROM ".self::$module_db.".x_settings 
+                 		$sql = "SELECT setting_id FROM sentora_xbilling.x_settings 
 					                WHERE setting_name=:setting_name AND reseller_ac_id_fk=:user_id";
                         $bindArray = array(':setting_name' => $key, ':user_id'=>$currentuser['userid']);
                         $zdbh->bindQuery($sql, $bindArray);
                         $setting_info = $zdbh->returnRow(); 
                         
                         if(!is_array($setting_info)){
-                           $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_settings
+                           $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_settings
                                                    (setting_name,setting_value,reseller_ac_id_fk
                                                    ) VALUES (:setting_name, :setting_value, :user_id)");
                            $sql->bindParam(':setting_name', $key);
@@ -928,7 +928,7 @@ class module_controller {
                            $sql->bindParam(':user_id', $currentuser['userid']);
                            $sql->execute();                                                      
                         } else {
-                           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_settings
+                           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_settings
                                                    SET setting_value=:setting_value 
                                                    WHERE reseller_ac_id_fk=:user_id AND setting_id=:id");
                            $sql->bindParam(':id', $setting_info['setting_id']);
@@ -954,7 +954,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='email_format' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='email_format' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -984,7 +984,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='email_format' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='email_format' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -999,7 +999,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='email_format' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='email_format' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -1017,7 +1017,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='email_format' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='email_format' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -1035,7 +1035,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='renewal_reminder_message' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='renewal_reminder_message' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -1053,7 +1053,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='order_message' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='order_message' 
 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
@@ -1072,7 +1072,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='welcome_message' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='welcome_message' 
 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
@@ -1091,7 +1091,7 @@ class module_controller {
         $currentuser = ctrl_users::GetUserDetail();
         $edit_info = array();
         
- 		$sql = "SELECT setting_value FROM ".self::$module_db.".x_settings WHERE setting_name='renewal_message' 
+ 		$sql = "SELECT setting_value FROM sentora_xbilling.x_settings WHERE setting_name='renewal_message' 
  		            AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -1138,14 +1138,14 @@ class module_controller {
 
             foreach($formvars as $key=>$value){
                 if(in_array($key,$setting_keys)){
-                 		$sql = "SELECT setting_id FROM ".self::$module_db.".x_settings 
+                 		$sql = "SELECT setting_id FROM sentora_xbilling.x_settings 
 					                WHERE setting_name=:setting_name AND reseller_ac_id_fk=:user_id";
                         $bindArray = array(':setting_name' => $key, ':user_id'=>$currentuser['userid']);
                         $zdbh->bindQuery($sql, $bindArray);
                         $setting_info = $zdbh->returnRow(); 
                         
                         if(!is_array($setting_info)){
-                           $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_settings
+                           $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_settings
                                                    (setting_name,setting_value,reseller_ac_id_fk
                                                    ) VALUES (:setting_name, :setting_value, :user_id)");
                            $sql->bindParam(':setting_name', $key);
@@ -1153,7 +1153,7 @@ class module_controller {
                            $sql->bindParam(':user_id', $currentuser['userid']);
                            $sql->execute();                                                      
                         } else {
-                           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_settings
+                           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_settings
                                                    SET setting_value=:setting_value 
                                                    WHERE reseller_ac_id_fk=:user_id AND setting_id=:id");
                            $sql->bindParam(':id', $setting_info['setting_id']);
@@ -1176,7 +1176,7 @@ class module_controller {
     static function getServicePeriods(){
         global $zdbh;
         $currentuser = ctrl_users::GetUserDetail();
-        $periods = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_periods 
+        $periods = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_periods 
                                         WHERE reseller_ac_id_fk=:user_id 
                                         AND period_deleted_ts IS NULL 
                                         ORDER BY period_duration ASC;");
@@ -1242,7 +1242,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT period_duration FROM ".self::$module_db.".x_periods 
+ 		$sql = "SELECT period_duration FROM sentora_xbilling.x_periods 
 					WHERE period_id=:period_id AND reseller_ac_id_fk=:user_id 
 					AND period_deleted_ts IS NULL";
         $bindArray = array(':period_id' => (int)$formvars['period_id'], ':user_id'=>$currentuser['userid']);
@@ -1265,7 +1265,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT default_amount FROM ".self::$module_db.".x_periods 
+ 		$sql = "SELECT default_amount FROM sentora_xbilling.x_periods 
 					WHERE period_id=:period_id AND reseller_ac_id_fk=:user_id 
 					AND period_deleted_ts IS NULL";
         $bindArray = array(':period_id' => (int)$formvars['period_id'], ':user_id'=>$currentuser['userid']);
@@ -1299,7 +1299,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT period_duration FROM ".self::$module_db.".x_periods 
+ 		$sql = "SELECT period_duration FROM sentora_xbilling.x_periods 
 					WHERE period_id=:period_id AND reseller_ac_id_fk=:user_id 
 					AND period_deleted_ts IS NULL";
         $bindArray = array(':period_id' => (int)$formvars['period_id'], ':user_id'=>$currentuser['userid']);
@@ -1356,7 +1356,7 @@ class module_controller {
         $period_info = array();
         
         if((int) $formvars['period_duration'] && (float) $formvars['period_amount'] && (int) $formvars['period_id']){
-		    $sql = "SELECT * FROM ".self::$module_db.".x_periods 
+		    $sql = "SELECT * FROM sentora_xbilling.x_periods 
 					    WHERE period_id=:period_id AND reseller_ac_id_fk=:user_id 
 					    AND period_deleted_ts IS NULL";
             $bindArray = array(':period_id' => (int)$formvars['period_id'], ':user_id'=>$currentuser['userid']);
@@ -1407,7 +1407,7 @@ class module_controller {
         }
         
         //fetch periods
-        $periods = $zdbh->prepare("SELECT period_id,default_amount FROM ".self::$module_db.".x_periods 
+        $periods = $zdbh->prepare("SELECT period_id,default_amount FROM sentora_xbilling.x_periods 
                                         WHERE reseller_ac_id_fk=:user_id 
                                         AND period_deleted_ts IS NULL;");
         $periods->bindParam(':user_id', $currentuser['userid']);
@@ -1415,21 +1415,21 @@ class module_controller {
         if (!fs_director::CheckForEmptyValue($periods)){
             while ($row = $periods->fetch()) {
                 //fetch packages
-                $packages = $zdbh->prepare("SELECT zpx_package_id FROM ".self::$module_db.".x_packages 
+                $packages = $zdbh->prepare("SELECT zpx_package_id FROM sentora_xbilling.x_packages 
                                                 WHERE reseller_ac_id_fk=:user_id;");
                 $packages->bindParam(':user_id', $currentuser['userid']);
                 $packages->execute();
                 if (!fs_director::CheckForEmptyValue($packages)) {
                     while ($row_p = $packages->fetch()) {
                        //insert non-existing packages
-                 		$sql = "SELECT package_period_id FROM ".self::$module_db.".x_packages_periods 
+                 		$sql = "SELECT package_period_id FROM sentora_xbilling.x_packages_periods 
 					                WHERE period_id=:period_id AND zpx_package_id=:pkg_id";
                         $bindArray = array(':period_id' => $row['period_id'], ':pkg_id'=>$row_p['zpx_package_id']);
                         $zdbh->bindQuery($sql, $bindArray);
                         $package_period_info = $zdbh->returnRow(); 
 
                         if(!is_array($package_period_info)){
-                           $sql = $zdbh->prepare("INSERT IGNORE INTO ".self::$module_db.".x_packages_periods
+                           $sql = $zdbh->prepare("INSERT IGNORE INTO sentora_xbilling.x_packages_periods
                                                    (zpx_package_id,period_id,package_amount
                                                    ) VALUES (
                                                    :pkg_id, :pid, :pkg_amt)");
@@ -1609,7 +1609,7 @@ class module_controller {
         if(is_array($formvars['period_amount'])){
             foreach($formvars['period_amount'] as $pid=>$amt){
                $amt = (float) $amt;
-               $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_packages_periods 
+               $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_packages_periods 
                                        SET package_amount=:pkg_amt WHERE zpx_package_id=:pkg_id 
                                        AND package_period_id=:pkg_period_id");
                $sql->bindParam(':pkg_id', $formvars['package_id']);
@@ -1630,13 +1630,13 @@ class module_controller {
         
         $reseller_id = self::getUserResellerID();
         
-        $sql = "SELECT * FROM ".self::$module_db.".x_payment_options WHERE reseller_ac_id_fk=:user_id 
+        $sql = "SELECT * FROM sentora_xbilling.x_payment_options WHERE reseller_ac_id_fk=:user_id 
                     AND option_deleted_ts IS NULL";
-        //$sql = "SELECT * FROM ".self::$module_db.".x_payment_options";
+        //$sql = "SELECT * FROM sentora_xbilling.x_payment_options";
         if(self::getisAddMethod()){
             //$option_id = self::getCurrentPaymentOptionID();
             $pyt_options = $zdbh->prepare("SELECT payment_option_id FROM 
-                                        ".self::$module_db.".x_payment_methods 
+                                        sentora_xbilling.x_payment_methods 
                                         WHERE reseller_ac_id_fk=:uid
                                         ;");
             $pyt_options->bindParam(':uid', $currentuser['userid']);
@@ -1672,7 +1672,7 @@ class module_controller {
             $selected_method_id = self::getCurrentPaymentMethodID();
             if($selected_method_id){
                $option = $zdbh->prepare("SELECT payment_option_id FROM 
-                                        ".self::$module_db.".x_payment_methods 
+                                        sentora_xbilling.x_payment_methods 
                                          WHERE method_id=:id AND reseller_ac_id_fk=:user_id 
                                          AND method_deleted_ts IS NULL;");
                $option->bindParam(':id', $selected_method_id);
@@ -1724,7 +1724,7 @@ class module_controller {
         global $zdbh;
         if($payment_option_id){
             $fields = $zdbh->prepare("SELECT field_name,field_label FROM 
-                                        ".self::$module_db.".x_payment_option_fields 
+                                        sentora_xbilling.x_payment_option_fields 
                                         WHERE payment_option_id=:id ORDER BY field_name ASC;");
             $fields->bindParam(':id', $payment_option_id);
             $fields->execute();
@@ -1754,7 +1754,7 @@ class module_controller {
         
         if(isset($formvars['option_id'])){
             $fields = $zdbh->prepare("SELECT COUNT(*) AS total_fields FROM 
-                                        ".self::$module_db.".x_payment_option_fields 
+                                        sentora_xbilling.x_payment_option_fields 
                                         WHERE payment_option_id=:id ORDER BY field_name ASC;");
             $fields->bindParam(':id', $formvars['option_id']);
             $fields->execute();
@@ -1820,7 +1820,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT payment_option_form_html FROM ".self::$module_db.".x_payment_options 
+ 		$sql = "SELECT payment_option_form_html FROM sentora_xbilling.x_payment_options 
 					WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id 
 					AND option_deleted_ts IS NULL";
         $bindArray = array(':option_id' => (int)$formvars['option_id'], 
@@ -1844,7 +1844,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT enabled_yn FROM ".self::$module_db.".x_payment_options 
+ 		$sql = "SELECT enabled_yn FROM sentora_xbilling.x_payment_options 
 					WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id 
 					AND option_deleted_ts IS NULL";
         $bindArray = array(':option_id' => (int)$formvars['option_id'], ':user_id'=>$currentuser['userid']);
@@ -1889,7 +1889,7 @@ class module_controller {
         if(isset($formvars['method_id'])){
             $currentuser = ctrl_users::GetUserDetail();
             $options = $zdbh->prepare("SELECT payment_option_id FROM 
-                                        ".self::$module_db.".x_payment_methods 
+                                        sentora_xbilling.x_payment_methods 
                                         WHERE reseller_ac_id_fk=:user_id 
                                         AND method_id=:method_id 
                                         AND method_deleted_ts IS NULL LIMIT 1;");
@@ -1921,7 +1921,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT payment_option_name FROM ".self::$module_db.".x_payment_options  					WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id 
+ 		$sql = "SELECT payment_option_name FROM sentora_xbilling.x_payment_options  					WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id 
              		AND option_deleted_ts IS NULL";
         $bindArray = array(':option_id' => (int)$formvars['option_id'], ':user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -2009,7 +2009,7 @@ class module_controller {
                 }
             }
 
-		    $sql = "SELECT * FROM ".self::$module_db.".x_payment_options 
+		    $sql = "SELECT * FROM sentora_xbilling.x_payment_options 
 					    WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id 
 					    AND option_deleted_ts IS NULL";
             $bindArray = array(':option_id' => (int)$formvars['option_id'], ':user_id'=>$currentuser['userid']);
@@ -2067,14 +2067,14 @@ class module_controller {
         $html = '';
         if($payment_option_id){
             $fields = $zdbh->prepare("SELECT field_name,field_label FROM 
-                                        ".self::$module_db.".x_payment_option_fields 
+                                        sentora_xbilling.x_payment_option_fields 
                                         WHERE payment_option_id=:id ORDER BY field_name ASC;");
             $fields->bindParam(':id', $payment_option_id);
             $fields->execute();
             $res = array();
             if (!fs_director::CheckForEmptyValue($fields)) {
                 while ($row = $fields->fetch()) {
-             		$sql = "SELECT field_value FROM ".self::$module_db.".x_payment_option_values
+             		$sql = "SELECT field_value FROM sentora_xbilling.x_payment_option_values
                 				WHERE payment_option_id=:id AND reseller_ac_id_fk=:user_id 
                 				AND field_name=:name";
                     $bindArray = array(':id' => $payment_option_id, 
@@ -2099,7 +2099,7 @@ class module_controller {
         global $zdbh;
         
         if($user_id && $option_id && $field_name){
-      		$sql = "SELECT field_value FROM ".self::$module_db.".x_payment_option_values
+      		$sql = "SELECT field_value FROM sentora_xbilling.x_payment_option_values
          				WHERE payment_option_id=:id AND reseller_ac_id_fk=:user_id 
            				AND field_name=:name";
             $bindArray = array(':id' => $option_id, ':user_id'=>$user_id, ':name'=>$field_name);
@@ -2123,14 +2123,14 @@ class module_controller {
         
         $currentuser = ctrl_users::GetUserDetail();
         //fetch payment options
-        $options = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_payment_options 
+        $options = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_payment_options 
                                     WHERE reseller_ac_id_fk=:user_id 
                                     AND option_deleted_ts IS NULL AND enabled_yn = '1' 
                                     ORDER BY payment_option_id ASC;");
         $options->bindParam(':user_id', $reseller_id);
         $options->execute();
 
-        /*$methods = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_payment_methods 
+        /*$methods = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_payment_methods 
                                     WHERE reseller_ac_id_fk=:user_id 
                                     AND method_deleted_ts IS NULL 
                                     ORDER BY method_id ASC;");
@@ -2141,7 +2141,7 @@ class module_controller {
         if (!fs_director::CheckForEmptyValue($options)) {
             while ($row = $options->fetch()) {            
                  /*$option = $zdbh->prepare("SELECT payment_option_name 
-                                            FROM ".self::$module_db.".x_payment_options 
+                                            FROM sentora_xbilling.x_payment_options 
                                             WHERE payment_option_id=:option_id AND 
                                             reseller_ac_id_fk=:user_id 
                                             AND option_deleted_ts IS NULL");
@@ -2151,7 +2151,7 @@ class module_controller {
                  $row_option = $option->fetch();
                 
                  $payment_option_name = $row_option['payment_option_name'];*/
-                $sql = "SELECT method_id,enabled_yn FROM ".self::$module_db.".x_payment_methods 
+                $sql = "SELECT method_id,enabled_yn FROM sentora_xbilling.x_payment_methods 
                                             WHERE reseller_ac_id_fk=:user_id 
                                             AND payment_option_id=:opt_id 
                                             AND method_deleted_ts IS NULL 
@@ -2177,7 +2177,7 @@ class module_controller {
     /*static function getPaymentMethodOptions(){
         global $zdbh;
         $currentuser = ctrl_users::GetUserDetail();
-        $methods = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_payment_options 
+        $methods = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_payment_options 
                                     WHERE reseller_ac_id_fk=:user_id ORDER BY payment_option_id ASC;");
         $methods->bindParam(':user_id', $currentuser['userid']);
         $methods->execute();
@@ -2252,7 +2252,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT method_form_html FROM ".self::$module_db.".x_payment_methods 
+ 		$sql = "SELECT method_form_html FROM sentora_xbilling.x_payment_methods 
 					WHERE method_id=:method_id AND reseller_ac_id_fk=:user_id";
         $bindArray = array(':method_id' => (int)$formvars['method_id'], 'user_id'=>$currentuser['userid']);
         $zdbh->bindQuery($sql, $bindArray);
@@ -2274,7 +2274,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT enabled_yn FROM ".self::$module_db.".x_payment_methods 
+ 		$sql = "SELECT enabled_yn FROM sentora_xbilling.x_payment_methods 
 
 					WHERE method_id=:method_id AND reseller_ac_id_fk=:user_id 
 					AND method_deleted_ts IS NULL";
@@ -2312,11 +2312,11 @@ class module_controller {
         
         $reseller_id = self::getUserResellerID();
         
- 		$sql = "SELECT payment_option_name FROM ".self::$module_db.".x_payment_options 
- 		            INNER JOIN ".self::$module_db.".x_payment_methods ON 
- 		            ".self::$module_db.".x_payment_methods.payment_option_id=".self::$module_db.".x_payment_options.payment_option_id
+ 		$sql = "SELECT payment_option_name FROM sentora_xbilling.x_payment_options 
+ 		            INNER JOIN sentora_xbilling.x_payment_methods ON 
+ 		            sentora_xbilling.x_payment_methods.payment_option_id=sentora_xbilling.x_payment_options.payment_option_id
 					WHERE method_id=:method_id AND 
-					".self::$module_db.".x_payment_options.reseller_ac_id_fk=:user_id 
+					sentora_xbilling.x_payment_options.reseller_ac_id_fk=:user_id 
 					AND option_deleted_ts IS NULL AND method_deleted_ts IS NULL";
         $bindArray = array(':method_id' => (int)$formvars['method_id'], ':user_id'=>$reseller_id);
         $zdbh->bindQuery($sql, $bindArray);
@@ -2378,7 +2378,7 @@ class module_controller {
         $method_info = array();
         
         if($formvars['payment_option_id'] && $formvars['method_id']){
-		    $sql = "SELECT * FROM ".self::$module_db.".x_payment_methods
+		    $sql = "SELECT * FROM sentora_xbilling.x_payment_methods
 		              WHERE method_id=:method_id AND reseller_ac_id_fk=:user_id 
 		              AND method_deleted_ts IS NULL";
             $bindArray = array(':method_id' => (int)$formvars['method_id'], ':user_id'=>$currentuser['userid']);
@@ -2435,15 +2435,15 @@ class module_controller {
         global $zdbh;
         $currentuser = ctrl_users::GetUserDetail();
         
-        $orders = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_invoices_orders 
-                                    INNER JOIN ".self::$module_db.".x_orders ON ".self::$module_db.".x_orders.order_id=".self::$module_db.".x_invoices_orders.order_id 
-                                    INNER JOIN ".self::$module_db.".x_invoices ON 
-                                    ".self::$module_db.".x_invoices.invoice_id=".self::$module_db.".x_invoices_orders.invoice_id 
-                                    WHERE ".self::$module_db.".x_invoices.reseller_ac_id_fk=:user_id 
-                                    AND ".self::$module_db.".x_orders.reseller_ac_id_fk=:user_id 
+        $orders = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_invoices_orders 
+                                    INNER JOIN sentora_xbilling.x_orders ON sentora_xbilling.x_orders.order_id=sentora_xbilling.x_invoices_orders.order_id 
+                                    INNER JOIN sentora_xbilling.x_invoices ON 
+                                    sentora_xbilling.x_invoices.invoice_id=sentora_xbilling.x_invoices_orders.invoice_id 
+                                    WHERE sentora_xbilling.x_invoices.reseller_ac_id_fk=:user_id 
+                                    AND sentora_xbilling.x_orders.reseller_ac_id_fk=:user_id 
                                     AND invoice_deleted_ts IS NULL AND order_deleted_ts IS NULL 
-                                    GROUP BY ".self::$module_db.".x_invoices.invoice_id 
-                                    ORDER BY ".self::$module_db.".x_invoices.invoice_id DESC;");
+                                    GROUP BY sentora_xbilling.x_invoices.invoice_id 
+                                    ORDER BY sentora_xbilling.x_invoices.invoice_id DESC;");
         $orders->bindParam(':user_id', $currentuser['userid']);
         $orders->execute();
         $res = array();
@@ -2617,7 +2617,7 @@ class module_controller {
               if(!$field){
               	return true;
               } else {
-		      $sql = "SELECT ".$field." FROM ".self::$module_db.".x_vouchers 
+		      $sql = "SELECT ".$field." FROM sentora_xbilling.x_vouchers 
 		                               WHERE voucher_id=:vid AND voucher_deleted_ts IS NULL;";
 		      $bindArray = array(':vid' => (int) $order_vid);
 		      $zdbh->bindQuery($sql, $bindArray);
@@ -2696,16 +2696,16 @@ class module_controller {
         if($order_id && $field && $table){
             $currentuser = ctrl_users::GetUserDetail();        
             
-            $orders = $zdbh->prepare("SELECT $table.$field FROM ".self::$module_db.".x_invoices_orders 
-                                        INNER JOIN ".self::$module_db.".x_orders ON ".self::$module_db.".x_orders.order_id=".self::$module_db.".x_invoices_orders.order_id 
-                                        INNER JOIN ".self::$module_db.".x_invoices ON 
-                                        ".self::$module_db.".x_invoices.invoice_id=".self::$module_db.".x_invoices_orders.invoice_id 
-                                        WHERE ".self::$module_db.".x_invoices.reseller_ac_id_fk=:user_id 
-                                        AND ".self::$module_db.".x_orders.reseller_ac_id_fk=:user_id
-                                        AND ".self::$module_db.".x_invoices.invoice_id=:inv_id 
+            $orders = $zdbh->prepare("SELECT $table.$field FROM sentora_xbilling.x_invoices_orders 
+                                        INNER JOIN sentora_xbilling.x_orders ON sentora_xbilling.x_orders.order_id=sentora_xbilling.x_invoices_orders.order_id 
+                                        INNER JOIN sentora_xbilling.x_invoices ON 
+                                        sentora_xbilling.x_invoices.invoice_id=sentora_xbilling.x_invoices_orders.invoice_id 
+                                        WHERE sentora_xbilling.x_invoices.reseller_ac_id_fk=:user_id 
+                                        AND sentora_xbilling.x_orders.reseller_ac_id_fk=:user_id
+                                        AND sentora_xbilling.x_invoices.invoice_id=:inv_id 
                                         AND invoice_deleted_ts IS NULL AND order_deleted_ts IS NULL 
-                                        GROUP BY ".self::$module_db.".x_invoices.invoice_id 
-                                        ORDER BY ".self::$module_db.".x_invoices.invoice_id ASC;");
+                                        GROUP BY sentora_xbilling.x_invoices.invoice_id 
+                                        ORDER BY sentora_xbilling.x_invoices.invoice_id ASC;");
             $orders->bindParam(':user_id', $currentuser['userid']);
             $orders->bindParam(':inv_id', $order_id);
             $orders->execute();
@@ -2745,17 +2745,17 @@ class module_controller {
         } else {
             $currentuser = ctrl_users::GetUserDetail();        
             
-            $sql = "SELECT * FROM ".self::$module_db.".x_invoices_orders 
-                                        INNER JOIN ".self::$module_db.".x_orders ON ".self::$module_db.".x_orders.order_id=".self::$module_db.".x_invoices_orders.order_id 
-                                        INNER JOIN ".self::$module_db.".x_invoices ON 
-                                        ".self::$module_db.".x_invoices.invoice_id=".self::$module_db.".x_invoices_orders.invoice_id 
+            $sql = "SELECT * FROM sentora_xbilling.x_invoices_orders 
+                                        INNER JOIN sentora_xbilling.x_orders ON sentora_xbilling.x_orders.order_id=sentora_xbilling.x_invoices_orders.order_id 
+                                        INNER JOIN sentora_xbilling.x_invoices ON 
+                                        sentora_xbilling.x_invoices.invoice_id=sentora_xbilling.x_invoices_orders.invoice_id 
                                         INNER JOIN ".self::$server_app."_core.x_accounts ON ".self::$server_app."_core.x_accounts.ac_id_pk=x_invoices.ac_id_fk                                         
                                         INNER JOIN ".self::$server_app."_core.x_profiles 
                                         ON ".self::$server_app."_core.x_profiles.ud_user_fk=".self::$server_app."_core.x_accounts.ac_id_pk                                         
-                                        WHERE ".self::$module_db.".x_invoices.invoice_id=:inv_id 
+                                        WHERE sentora_xbilling.x_invoices.invoice_id=:inv_id 
                                         AND invoice_deleted_ts IS NULL AND order_deleted_ts IS NULL 
-                                        GROUP BY ".self::$module_db.".x_invoices.invoice_id 
-                                        ORDER BY ".self::$module_db.".x_invoices.invoice_id ASC;";
+                                        GROUP BY sentora_xbilling.x_invoices.invoice_id 
+                                        ORDER BY sentora_xbilling.x_invoices.invoice_id ASC;";
             
             $orders = $zdbh->prepare($sql);
             //$orders->bindParam(':user_id', $currentuser['userid']);
@@ -2870,7 +2870,7 @@ class module_controller {
     static function getVouchers(){
         global $zdbh;
         $currentuser = ctrl_users::GetUserDetail();
-        $vouchers = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_vouchers 
+        $vouchers = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_vouchers 
                                         WHERE reseller_ac_id_fk=:user_id 
                                         AND voucher_deleted_ts IS NULL;");
         $vouchers->bindParam(':user_id', $currentuser['userid']);
@@ -2899,7 +2899,7 @@ class module_controller {
                
 /*               //usages
                $total_usages = 0;
-		    $sql = "SELECT COUNT(*) AS total_usages FROM ".self::$module_db.".x_invoices 
+		    $sql = "SELECT COUNT(*) AS total_usages FROM sentora_xbilling.x_invoices 
 		                WHERE invoice_voucher_id=:id AND invoice_deleted_ts IS NULL";
 		    $numrows = $zdbh->prepare($sql);
 		    $numrows->bindParam(':id', $row['voucher_id']);
@@ -2930,7 +2930,7 @@ class module_controller {
         
                //usages
            $total_usages = 0;
-           $sql = "SELECT COUNT(*) AS total_usages FROM ".self::$module_db.".x_invoices 
+           $sql = "SELECT COUNT(*) AS total_usages FROM sentora_xbilling.x_invoices 
                         WHERE invoice_voucher_id=:id AND invoice_deleted_ts IS NULL";
             $numrows = $zdbh->prepare($sql);
             $numrows->bindParam(':id', $voucher_id);
@@ -2992,7 +2992,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT period_duration FROM ".self::$module_db.".x_periods 
+ 		$sql = "SELECT period_duration FROM sentora_xbilling.x_periods 
 					WHERE period_id=:period_id AND reseller_ac_id_fk=:user_id 
 					AND period_deleted_ts IS NULL";
         $bindArray = array(':period_id' => (int)$formvars['period_id'], ':user_id'=>$currentuser['userid']);
@@ -3015,7 +3015,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT default_amount FROM ".self::$module_db.".x_periods 
+ 		$sql = "SELECT default_amount FROM sentora_xbilling.x_periods 
 					WHERE period_id=:period_id AND reseller_ac_id_fk=:user_id 
 					AND period_deleted_ts IS NULL";
         $bindArray = array(':period_id' => (int)$formvars['period_id'], ':user_id'=>$currentuser['userid']);
@@ -3049,7 +3049,7 @@ class module_controller {
             return false;
         }
         
- 		$sql = "SELECT voucher_code,usage_type,discount_type,active_yn,discount FROM ".self::$module_db.".x_vouchers 
+ 		$sql = "SELECT voucher_code,usage_type,discount_type,active_yn,discount FROM sentora_xbilling.x_vouchers 
 					WHERE voucher_id=:voucher_id AND reseller_ac_id_fk=:user_id 
 					AND voucher_deleted_ts IS NULL";
         $bindArray = array(':voucher_id' => (int)$formvars['voucher_id'], ':user_id'=>$currentuser['userid']);
@@ -3159,7 +3159,7 @@ class module_controller {
         $period_info = array();
         
         if((float) $formvars['discount'] && (int) $formvars['voucher_id']){
-		    $sql = "SELECT * FROM ".self::$module_db.".x_vouchers 
+		    $sql = "SELECT * FROM sentora_xbilling.x_vouchers 
 
 					    WHERE voucher_id=:voucher_id AND reseller_ac_id_fk=:user_id 
 					    AND voucher_deleted_ts IS NULL";
@@ -3410,7 +3410,7 @@ class module_controller {
             }
                 
             //complete order
-             $res = $zdbh->prepare("SELECT invoice_id FROM ".self::$module_db.".x_invoices 
+             $res = $zdbh->prepare("SELECT invoice_id FROM sentora_xbilling.x_invoices 
                                       WHERE ac_id_fk=:id;");
              $res->bindParam(':id', $new_user_id);
              $res->execute();
@@ -3426,7 +3426,7 @@ class module_controller {
         //send email
         if($formvars['email_yn'] == 1){
             //fetch invoice reference
-           $sql = $zdbh->prepare("SELECT invoice_reference FROM ".self::$module_db.".x_invoices 
+           $sql = $zdbh->prepare("SELECT invoice_reference FROM sentora_xbilling.x_invoices 
                                    WHERE ac_id_fk=:id;");
            $sql->bindParam(':id', $new_user_id);
            $sql->execute();
@@ -3496,7 +3496,7 @@ class module_controller {
            if (!fs_director::CheckForEmptyValue($periods)){
               while ($row = $periods->fetch()){
                 //is this a free package?
-                $pkg = $zdbh->prepare("SELECT free_package_yn FROM ".self::$module_db.".x_packages 
+                $pkg = $zdbh->prepare("SELECT free_package_yn FROM sentora_xbilling.x_packages 
                                         WHERE zpx_package_id=:pkg_id;");
                 $pkg->bindParam(':pkg_id', $row['zpx_package_id']);
                 $pkg->execute();
@@ -3531,7 +3531,7 @@ class module_controller {
                                          "'country_code'","'pending_invoice_delete_days'",
                                          "'recaptcha_disabled_yn'",  "'logs_enabled_yn'");
              $settings = $zdbh->prepare("SELECT setting_name,setting_value FROM 
-                                        ".self::$module_db.".x_settings WHERE
+                                        sentora_xbilling.x_settings WHERE
                                          reseller_ac_id_fk=:zpx_uid AND setting_name IN
                                          (".implode(',',$valid_settings).");");
              $settings->bindParam(':zpx_uid', $user_id);
@@ -3562,7 +3562,7 @@ class module_controller {
        if($user_id && $setting_name){
              //settings
              $settings = $zdbh->prepare("SELECT setting_value FROM 
-                                        ".self::$module_db.".x_settings WHERE
+                                        sentora_xbilling.x_settings WHERE
                                          reseller_ac_id_fk=:zpx_uid AND setting_name=:setting_name;");
              $settings->bindParam(':zpx_uid', $user_id);
              $settings->bindParam(':setting_name', $setting_name);
@@ -3670,13 +3670,13 @@ class module_controller {
         }
         
         //fetch invoice
-         $orders = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_invoices_orders 
-                                    INNER JOIN ".self::$module_db.".x_orders ON ".self::$module_db.".x_orders.order_id=".self::$module_db.".x_invoices_orders.order_id 
-                                    INNER JOIN ".self::$module_db.".x_invoices ON 
-                                    ".self::$module_db.".x_invoices.invoice_id=".self::$module_db.".x_invoices_orders.invoice_id 
-                                    WHERE ".self::$module_db.".x_invoices.reseller_ac_id_fk=:user_id 
-                                    AND ".self::$module_db.".x_orders.reseller_ac_id_fk=:user_id
-                                    AND ".self::$module_db.".x_invoices.invoice_reference=:inv_ref 
+         $orders = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_invoices_orders 
+                                    INNER JOIN sentora_xbilling.x_orders ON sentora_xbilling.x_orders.order_id=sentora_xbilling.x_invoices_orders.order_id 
+                                    INNER JOIN sentora_xbilling.x_invoices ON 
+                                    sentora_xbilling.x_invoices.invoice_id=sentora_xbilling.x_invoices_orders.invoice_id 
+                                    WHERE sentora_xbilling.x_invoices.reseller_ac_id_fk=:user_id 
+                                    AND sentora_xbilling.x_orders.reseller_ac_id_fk=:user_id
+                                    AND sentora_xbilling.x_invoices.invoice_reference=:inv_ref 
                                     AND invoice_deleted_ts IS NULL AND order_deleted_ts IS NULL;");
           $orders->bindParam(':user_id', $user_id);
           $orders->bindParam(':inv_ref', $invoice_reference);
@@ -3685,7 +3685,7 @@ class module_controller {
           $invoice = $orders->fetch();
           if(is_array($invoice)){
             //foreach($invoice as $order){
-          		$sql = "SELECT payment_option_name FROM ".self::$module_db.".x_payment_options 
+          		$sql = "SELECT payment_option_name FROM sentora_xbilling.x_payment_options 
                             WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id 
           		            AND option_deleted_ts IS NULL";
                 $bindArray = array(':option_id' => $invoice['payment_option_id'], ':user_id'=>$user_id);
@@ -3714,7 +3714,7 @@ class module_controller {
                 
                 //fetch voucher info....if any
                 if($invoice['invoice_voucher_id']){
-              	   $sql = "SELECT discount,discount_type,voucher_code FROM ".self::$module_db.".x_vouchers 
+              	   $sql = "SELECT discount,discount_type,voucher_code FROM sentora_xbilling.x_vouchers 
               		            WHERE voucher_id=:vid AND active_yn=1 
               		            AND voucher_deleted_ts IS NULL";
                     $bindArray = array(':vid' => $invoice['invoice_voucher_id']);
@@ -3757,7 +3757,7 @@ class module_controller {
     static function ListPaymentOptions($user_id){
         global $zdbh;
         
-        $methods = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_payment_options 
+        $methods = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_payment_options 
                                     WHERE reseller_ac_id_fk=:user_id AND enabled_yn='1' 
                                     AND option_deleted_ts IS NULL ORDER BY payment_option_id ASC;");
                                     
@@ -3786,7 +3786,7 @@ class module_controller {
         
         if($user_id && $invoice_reference && $transaction_id && $payment_method_id && $payment_date){
             //fetch invoice info
-             $res = $zdbh->prepare("SELECT invoice_id,ac_id_fk FROM ".self::$module_db.".x_invoices 
+             $res = $zdbh->prepare("SELECT invoice_id,ac_id_fk FROM sentora_xbilling.x_invoices 
                                         WHERE invoice_reference=:ref;");
              $res->bindParam(':ref', $invoice_reference);
              $res->execute();
@@ -3794,7 +3794,7 @@ class module_controller {
                 $invoice_info = $res->fetch();
                 if(is_array($invoice_info)){
                     //update invoice
-                   $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_invoices 
+                   $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_invoices 
                                             SET payment_option_id=:payment_method_id,
                                             transaction_id=:transaction_id,invoice_status='1' WHERE 
                                             reseller_ac_id_fk=:user_id AND invoice_id=:id");
@@ -3806,9 +3806,9 @@ class module_controller {
                    
                    //fetch orders and update
                     $orders = $zdbh->prepare("SELECT order_id
-                                                FROM ".self::$module_db.".x_invoices_orders WHERE 
-                                                ".self::$module_db.".x_invoices_orders.invoice_id=:id 
-                                                ORDER BY ".self::$module_db.".x_invoices_orders.order_id 
+                                                FROM sentora_xbilling.x_invoices_orders WHERE 
+                                                sentora_xbilling.x_invoices_orders.invoice_id=:id 
+                                                ORDER BY sentora_xbilling.x_invoices_orders.order_id 
                                                 ASC;");
                     $orders->bindParam(':id', $invoice_info['invoice_id']);
                     $orders->execute();
@@ -3817,8 +3817,8 @@ class module_controller {
                     if (!fs_director::CheckForEmptyValue($orders)) {
                         while ($row = $orders->fetch()) {
                             $order_info = $zdbh->prepare("SELECT order_vh_fk,package_period_id_fk 
-                                                        FROM ".self::$module_db.".x_orders WHERE 
-                                                        ".self::$module_db.".x_orders.order_id=:id 
+                                                        FROM sentora_xbilling.x_orders WHERE 
+                                                        sentora_xbilling.x_orders.order_id=:id 
                                                         AND order_deleted_ts IS NULL;");
                             $order_info->bindParam(':id', $row['order_id']);
                             $order_info->execute();
@@ -3833,7 +3833,7 @@ class module_controller {
                                 }
 
                                 
-                               $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_orders 
+                               $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_orders 
                                                         SET order_status='1',order_complete_dated=:date 
                                                         WHERE reseller_ac_id_fk=:user_id AND order_id=:id");
                                $sql->bindParam(':date', $payment_date);
@@ -3844,11 +3844,11 @@ class module_controller {
                                //update domain expiration
                                if(isset($order_row['order_vh_fk']) && isset($order_row['package_period_id_fk'])){
                                     $periods = $zdbh->prepare("SELECT period_duration 
-                                                                FROM ".self::$module_db.".x_periods INNER 
-                                                                JOIN ".self::$module_db.".x_packages_periods 
+                                                                FROM sentora_xbilling.x_periods INNER 
+                                                                JOIN sentora_xbilling.x_packages_periods 
                                                                  ON 
-                                        ".self::$module_db.".x_packages_periods.period_id=".self::$module_db.".x_periods.period_id 
-                                          WHERE ".self::$module_db.".x_packages_periods.package_period_id=:id 
+                                        sentora_xbilling.x_packages_periods.period_id=sentora_xbilling.x_periods.period_id 
+                                          WHERE sentora_xbilling.x_packages_periods.package_period_id=:id 
                                           AND period_deleted_ts IS NULL;");
                                     $periods->bindParam(':id', $order_row['package_period_id_fk']);
                                     $periods->execute();
@@ -3965,8 +3965,8 @@ class module_controller {
 
 
             //fetch invoices
-             $res = $zdbh->prepare("SELECT invoice_id,ac_id_fk,invoice_reference,invoice_dated 
-                                        FROM ".self::$module_db.".x_invoices 
+             $res = $zdbh->prepare("SELECT invoice_id, ac_id_fk, invoice_reference, invoice_dated 
+                                        FROM sentora_xbilling.x_invoices 
                                           WHERE invoice_status='0' AND reminder_sent_yn='0' 
                                           AND reseller_ac_id_fk=:uid AND invoice_deleted_ts IS NULL;");
              $res->bindParam(':uid', $user_id);
@@ -4009,7 +4009,7 @@ class module_controller {
                         $phpmailer->SendEmail(); */
                             
                         //update reminder sent
-                        $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_invoices
+                        $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_invoices
                                                  SET reminder_sent_yn='1' WHERE invoice_id=:id");
                         $sql->bindParam(':id', $row['invoice_id']);
                         $sql->execute();
@@ -4050,14 +4050,14 @@ class module_controller {
                         //we don't create a duplicate invoice
                         if($row['vh_invoice_created_yn'] == 1){
                             //select invoice reference
-                            $invoice = $zdbh->prepare("SELECT invoice_reference FROM ".self::$module_db.".x_invoices 
-                                                           INNER JOIN ".self::$module_db.".x_invoices_orders ON 
-                                                           ".self::$module_db.".x_invoices_orders.invoice_id=".self::$module_db.".x_invoices.invoice_id
-                                                           INNER JOIN ".self::$module_db.".x_orders ON 
-                                                           ".self::$module_db.".x_orders.order_id=".self::$module_db.".x_invoices_orders.order_id
-                                                           WHERE ".self::$module_db.".x_orders.order_vh_fk=:id AND invoice_status='0' 
+                            $invoice = $zdbh->prepare("SELECT invoice_reference FROM sentora_xbilling.x_invoices 
+                                                           INNER JOIN sentora_xbilling.x_invoices_orders ON 
+                                                           sentora_xbilling.x_invoices_orders.invoice_id=sentora_xbilling.x_invoices.invoice_id
+                                                           INNER JOIN sentora_xbilling.x_orders ON 
+                                                           sentora_xbilling.x_orders.order_id=sentora_xbilling.x_invoices_orders.order_id
+                                                           WHERE sentora_xbilling.x_orders.order_vh_fk=:id AND invoice_status='0' 
                                                            AND order_deleted_ts IS NULL 
-                                                           ORDER BY ".self::$module_db.".x_invoices.invoice_id DESC;");
+                                                           ORDER BY sentora_xbilling.x_invoices.invoice_id DESC;");
                             $invoice->bindParam(':id', $row['vh_id_pk']);
                             $invoice->execute();
                             $invoice_info = $invoice->fetch();
@@ -4130,13 +4130,13 @@ class module_controller {
           }
 
           //fetch previous order information
-          $numrows = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_orders INNER JOIN ".self::$module_db.".x_invoices_orders 
-                                      ON ".self::$module_db.".x_invoices_orders.order_id=".self::$module_db.".x_orders.order_id 
-                                      INNER JOIN ".self::$module_db.".x_invoices 
-                                      ON ".self::$module_db.".x_invoices.invoice_id=".self::$module_db.".x_invoices_orders.invoice_id
-                                      WHERE ".self::$module_db.".x_orders.order_vh_fk=:domain_id 
-                                      AND ".self::$module_db.".x_orders.order_deleted_ts IS NULL 
-                                      ORDER BY ".self::$module_db.".x_orders.order_id DESC LIMIT 1;");
+          $numrows = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_orders INNER JOIN sentora_xbilling.x_invoices_orders 
+                                      ON sentora_xbilling.x_invoices_orders.order_id=sentora_xbilling.x_orders.order_id 
+                                      INNER JOIN sentora_xbilling.x_invoices 
+                                      ON sentora_xbilling.x_invoices.invoice_id=sentora_xbilling.x_invoices_orders.invoice_id
+                                      WHERE sentora_xbilling.x_orders.order_vh_fk=:domain_id 
+                                      AND sentora_xbilling.x_orders.order_deleted_ts IS NULL 
+                                      ORDER BY sentora_xbilling.x_orders.order_id DESC LIMIT 1;");
           $numrows->bindParam(':domain_id', $domain_info['vh_id_pk']);
           $numrows->execute();
           $order_info = $numrows->fetch();
@@ -4146,7 +4146,7 @@ class module_controller {
           }
             
           //fetch previous invoice information
-          /*$numrows = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_orders 
+          /*$numrows = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_orders 
                                       WHERE order_vh_fk=:domain_id 
                                       AND order_deleted_ts IS NULL ORDER BY order_id DESC;");
           $numrows->bindParam(':domain_id', $domain_info['vh_id_pk']);
@@ -4159,7 +4159,7 @@ class module_controller {
 
           if(isset($order_info['invoice_voucher_id']) && $order_info['invoice_voucher_id'] > 0){
               //fetch voucher info
-              $numrows = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_vouchers 
+              $numrows = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_vouchers 
                                             WHERE voucher_id=:vid AND voucher_deleted_ts IS NULL;");
               $numrows->bindParam(':vid', $order_info['invoice_voucher_id']);
               $numrows->execute();
@@ -4177,7 +4177,7 @@ class module_controller {
             
           $datetime = date("Y-m-d H:i");
           //fetch order amount
-          $numrows = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_packages_periods 
+          $numrows = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_packages_periods 
                                         WHERE package_period_id=:pkg_pid;");
           $numrows->bindParam(':pkg_pid', $order_info['package_period_id_fk']);
           $numrows->execute();
@@ -4185,10 +4185,10 @@ class module_controller {
             
           //fetch package name
           $numrows = $zdbh->prepare("SELECT pk_name_vc FROM ".self::$server_app.".x_packages 
-                                        INNER JOIN ".self::$module_db.".x_packages ON 
-                                        ".self::$module_db.".x_packages.zpx_package_id=".self::$server_app.".x_packages.pk_id_pk
-                                        WHERE ".self::$module_db.".x_packages.reseller_ac_id_fk=:uid 
-                                        AND ".self::$module_db.".x_packages.zpx_package_id=:pkg_id 
+                                        INNER JOIN sentora_xbilling.x_packages ON 
+                                        sentora_xbilling.x_packages.zpx_package_id=".self::$server_app.".x_packages.pk_id_pk
+                                        WHERE sentora_xbilling.x_packages.reseller_ac_id_fk=:uid 
+                                        AND sentora_xbilling.x_packages.zpx_package_id=:pkg_id 
                                         AND pk_deleted_ts IS NULL;");
           $numrows->bindParam(':uid', $order_info['reseller_ac_id_fk']);
           $numrows->bindParam(':pkg_id', $package_period['zpx_package_id']);
@@ -4198,7 +4198,7 @@ class module_controller {
           $order_desc = $package['pk_name_vc'];
             
           //fetch period duration
-          $numrows = $zdbh->prepare("SELECT period_duration FROM ".self::$module_db.".x_periods 
+          $numrows = $zdbh->prepare("SELECT period_duration FROM sentora_xbilling.x_periods 
                                         WHERE reseller_ac_id_fk=:uid AND period_id=:pid 
                                         AND period_deleted_ts IS NULL");
           $numrows->bindParam(':uid', $order_info['reseller_ac_id_fk']);
@@ -4213,7 +4213,7 @@ class module_controller {
               }
           }
             
-            $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_orders (ac_id_fk,
+            $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_orders (ac_id_fk,
                                     reseller_ac_id_fk,order_vh_fk,order_dated,order_amount, order_desc,
 									package_period_id_fk,order_status,order_type_id,order_complete_dated
 									) VALUES (:userID,:zpx_uid,:domain_id,:date,:amount,:desc,:pkg_pid,
@@ -4228,7 +4228,7 @@ class module_controller {
             $sql->execute();
             
             //fetch newly created order id
-            $numrows = $zdbh->prepare("SELECT order_id FROM ".self::$module_db.".x_orders 
+            $numrows = $zdbh->prepare("SELECT order_id FROM sentora_xbilling.x_orders 
 
                                         WHERE reseller_ac_id_fk=:zpx_uid AND ac_id_fk=:uid 
                                         AND order_dated=:datetime");
@@ -4242,7 +4242,7 @@ class module_controller {
                 $order_id = $order['order_id'];
                 $invoice_reference = self::randomString(7);                
 
-                $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_invoices (
+                $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_invoices (
                                         reseller_ac_id_fk,invoice_dated,
                                         invoice_total_amount, invoice_reference,
                                         invoice_status,ac_id_fk
@@ -4256,7 +4256,7 @@ class module_controller {
                 $sql->execute();
 
                 //fetch newly created invoice id
-                $numrows = $zdbh->prepare("SELECT invoice_id FROM ".self::$module_db.".x_invoices 
+                $numrows = $zdbh->prepare("SELECT invoice_id FROM sentora_xbilling.x_invoices 
                                             WHERE reseller_ac_id_fk=:zpx_uid AND ac_id_fk=:uid 
                                             AND invoice_reference=:ref");
                 $numrows->bindParam(':uid', $order_info['ac_id_fk']);
@@ -4267,7 +4267,7 @@ class module_controller {
                 
                 if(isset($invoice['invoice_id'])){
                     //create invoice and order relationship                    
-                    $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_invoices_orders (
+                    $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_invoices_orders (
                                             invoice_id,order_id
 
                                             ) VALUES ('".$invoice['invoice_id']."',
@@ -4399,7 +4399,7 @@ class module_controller {
         global $zdbh;
         
         //$currentuser = ctrl_users::GetUserDetail();
-        $vouchers = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_vouchers 
+        $vouchers = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_vouchers 
                                         WHERE reseller_ac_id_fk=:user_id AND voucher_code=:code 
                                         AND voucher_deleted_ts IS NULL;");
         $vouchers->bindParam(':user_id', $user_id);
@@ -4962,7 +4962,7 @@ class module_controller {
             $datetime = date("Y-m-d H:i");
             //fetch order amount
             if($data['period_id'] > 0){
-                $numrows = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_packages_periods 
+                $numrows = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_packages_periods 
                                             WHERE zpx_package_id=:pkg_id AND period_id=:pid;");
                 $numrows->bindParam(':pkg_id', $data['package_id']);
                 $numrows->bindParam(':pid', $data['period_id']);
@@ -4975,10 +4975,10 @@ class module_controller {
             
             //fetch package name
             $numrows = $zdbh->prepare("SELECT pk_name_vc FROM ".self::$server_app."_core.x_packages 
-                                        INNER JOIN ".self::$module_db.".x_packages ON 
-                                        ".self::$module_db.".x_packages.zpx_package_id=".self::$server_app."_core.x_packages.pk_id_pk
-                                        WHERE ".self::$module_db.".x_packages.reseller_ac_id_fk=:uid 
-                                        AND ".self::$module_db.".x_packages.zpx_package_id=:pkg_id;");
+                                        INNER JOIN sentora_xbilling.x_packages ON 
+                                        sentora_xbilling.x_packages.zpx_package_id=".self::$server_app."_core.x_packages.pk_id_pk
+                                        WHERE sentora_xbilling.x_packages.reseller_ac_id_fk=:uid 
+                                        AND sentora_xbilling.x_packages.zpx_package_id=:pkg_id;");
             $numrows->bindParam(':uid', $data['zpx_uid']);
             $numrows->bindParam(':pkg_id', $data['package_id']);
             $numrows->execute();
@@ -4988,7 +4988,7 @@ class module_controller {
             
             //fetch period duration
             if($data['period_id'] > 0){
-                $numrows = $zdbh->prepare("SELECT period_duration FROM ".self::$module_db.".x_periods 
+                $numrows = $zdbh->prepare("SELECT period_duration FROM sentora_xbilling.x_periods 
                                             WHERE reseller_ac_id_fk=:uid AND period_id=:pid");
                 $numrows->bindParam(':uid', $data['zpx_uid']);
                 //$numrows->bindParam(':pkg_id', $data['package_id']);
@@ -5015,7 +5015,7 @@ class module_controller {
                 }
             }
                         
-            $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_orders (ac_id_fk,
+            $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_orders (ac_id_fk,
                                     reseller_ac_id_fk,order_vh_fk,order_dated,order_amount, order_desc,
 									package_period_id_fk,order_status,order_complete_dated
 									) VALUES (:userID,:zpx_uid,:domain_id,:date,:amount,:desc,:pkg_pid,
@@ -5030,7 +5030,7 @@ class module_controller {
             $sql->execute();
             
             //fetch newly created order id
-            $numrows = $zdbh->prepare("SELECT order_id FROM ".self::$module_db.".x_orders 
+            $numrows = $zdbh->prepare("SELECT order_id FROM sentora_xbilling.x_orders 
                                         WHERE reseller_ac_id_fk=:zpx_uid AND ac_id_fk=:uid 
                                         AND order_dated=:datetime");
             $numrows->bindParam(':uid', $user_id);
@@ -5043,7 +5043,7 @@ class module_controller {
                 $voucher_id = (int) isset($data['voucher_id']) ? $data['voucher_id'] : 0;
                 $invoice_reference = self::randomString(7);                
 
-                $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_invoices (
+                $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_invoices (
                                         reseller_ac_id_fk,invoice_dated,
                                         invoice_total_amount, invoice_reference,
                                         invoice_status,ac_id_fk, invoice_voucher_id
@@ -5058,7 +5058,7 @@ class module_controller {
                 $sql->execute();
 
                 //fetch newly created invoice id
-                $numrows = $zdbh->prepare("SELECT invoice_id FROM ".self::$module_db.".x_invoices 
+                $numrows = $zdbh->prepare("SELECT invoice_id FROM sentora_xbilling.x_invoices 
                                             WHERE reseller_ac_id_fk=:zpx_uid AND ac_id_fk=:uid 
                                             AND invoice_reference=:ref");
                 $numrows->bindParam(':uid', $user_id);
@@ -5069,7 +5069,7 @@ class module_controller {
                 
                 if(isset($invoice['invoice_id'])){
                     //create invoice and order relationship                    
-                    $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_invoices_orders (
+                    $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_invoices_orders (
                                             invoice_id,order_id
                                             ) VALUES ('".$invoice['invoice_id']."',
                                             '".$order['order_id']."')");
@@ -5299,7 +5299,7 @@ class module_controller {
 
         if($duration && $amount){
             //make sure we don't have an existing period with the same duration
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_periods 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_periods 
                         WHERE period_duration=:duration AND reseller_ac_id_fk=:user_id 
                         AND period_deleted_ts IS NULL";
             $numrows = $zdbh->prepare($sql);
@@ -5314,7 +5314,7 @@ class module_controller {
            
            runtime_hook::Execute('OnBeforeCreateServicePeriod');
            //add new service period
-           $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_periods (period_duration,default_amount,reseller_ac_id_fk
+           $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_periods (period_duration,default_amount,reseller_ac_id_fk
                                    ) VALUES (:duration, :amount, :user_id)");
            $sql->bindParam(':duration', $duration);
            $sql->bindParam(':amount', $amount);
@@ -5340,7 +5340,7 @@ class module_controller {
 
         if($duration && $amount && $period_id){
             //make sure we don't have an existing period with the same duration
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_periods 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_periods 
                         WHERE period_id<>:period_id AND period_duration=:duration 
                         AND reseller_ac_id_fk=:user_id";
             $numrows = $zdbh->prepare($sql);
@@ -5356,7 +5356,7 @@ class module_controller {
             
            //update service period
            runtime_hook::Execute('OnBeforeUpdateServicePeriod');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_periods SET period_duration=:duration,
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_periods SET period_duration=:duration,
                                     default_amount=:amount WHERE reseller_ac_id_fk=:user_id AND period_id=:id");
            $sql->bindParam(':duration', $duration);
            $sql->bindParam(':amount', $amount);
@@ -5385,7 +5385,7 @@ class module_controller {
 
            //delete service period
            runtime_hook::Execute('OnBeforeDeleteServicePeriod');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_periods 
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_periods 
                                     SET period_deleted_ts='".time()."' 
                                     WHERE period_id=:id AND reseller_ac_id_fk=:user_id");
            $sql->bindParam(':user_id', $currentuser['userid']);
@@ -5393,7 +5393,7 @@ class module_controller {
            $sql->execute();
 
            //delete packages periods as well
-           $sql = $zdbh->prepare("DELETE FROM ".self::$module_db.".x_packages_periods WHERE period_id=:id");
+           $sql = $zdbh->prepare("DELETE FROM sentora_xbilling.x_packages_periods WHERE period_id=:id");
            $sql->bindParam(':id', $period_id);
            $sql->execute();
 
@@ -5426,7 +5426,7 @@ class module_controller {
                 if(isset($pkg_free_yn[$pkg_id])){
                     $free_yn = 1;
                 }
-                  $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_packages SET package_desc=:desc,
+                  $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_packages SET package_desc=:desc,
                                             enabled_yn=:enabled_yn, free_package_yn=:free_yn 
                                             WHERE reseller_ac_id_fk=:user_id AND zpx_package_id=:id");
                    $sql->bindParam(':desc', $desc);
@@ -5457,7 +5457,7 @@ class module_controller {
 
         if($data['payment_option_id']){
             //make sure we don't have an existing payment method with the same name
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_payment_methods 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_payment_methods 
                         WHERE payment_option_id=:id AND reseller_ac_id_fk=:user_id 
                         AND method_deleted_ts IS NULL";
             $numrows = $zdbh->prepare($sql);
@@ -5479,7 +5479,7 @@ class module_controller {
            exit;*/
                       
            //add new payment method
-           $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_payment_methods
+           $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_payment_methods
                                      (payment_option_id,enabled_yn,reseller_ac_id_fk
                                      ) VALUES (:id, :enabled_yn, :user_id)");
            $sql->bindParam(':id', $data['payment_option_id']);
@@ -5488,7 +5488,7 @@ class module_controller {
            $sql->execute();
            
            // fetch newly inserted method id
-           $res = $zdbh->prepare("SELECT method_id FROM ".self::$module_db.".x_payment_methods 
+           $res = $zdbh->prepare("SELECT method_id FROM sentora_xbilling.x_payment_methods 
                                      WHERE payment_option_id=:id AND reseller_ac_id_fk=:user_id;");
            $res->bindParam(':id', $data['payment_option_id']);
            $res->bindParam(':user_id', $currentuser['userid']);
@@ -5501,7 +5501,7 @@ class module_controller {
                 foreach($payment_option_fields as $field){
                     if($field['name']){
                        //add payment option field values
-                       $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_payment_option_values
+                       $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_payment_option_values
                                                  (payment_option_id,reseller_ac_id_fk,
                                                  field_name,field_value) VALUES(
                                                  :id, :user_id, :field_name, :field_value)");
@@ -5534,7 +5534,7 @@ class module_controller {
         
         if($data['method_id'] && $data['payment_option_id']){
             //make sure we don't have an existing payment method with the same name
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_payment_methods 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_payment_methods 
                         WHERE payment_option_id=:option_id AND reseller_ac_id_fk=:user_id AND method_id<>:id";
             $numrows = $zdbh->prepare($sql);
             $numrows->bindParam(':option_id', $data['payment_option_id']);
@@ -5551,7 +5551,7 @@ class module_controller {
             
            //update payment method
            runtime_hook::Execute('OnBeforeUpdatePaymentMethod');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_payment_methods SET 
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_payment_methods SET 
                                     enabled_yn=:enabled_yn WHERE reseller_ac_id_fk=:user_id 
                                     AND method_id=:id");
            //$sql->bindParam(':name', $method_name);
@@ -5568,7 +5568,7 @@ class module_controller {
                 if($field['name']){
                    //delete existing payment option field values
                    unset($sql);
-                   $sql = $zdbh->prepare("DELETE FROM ".self::$module_db.".x_payment_option_values 
+                   $sql = $zdbh->prepare("DELETE FROM sentora_xbilling.x_payment_option_values 
                                             WHERE payment_option_id=:option_id AND 
                                             reseller_ac_id_fk=:user_id AND field_name=:field_name");
                    $sql->bindParam(':user_id', $currentuser['userid']);
@@ -5579,7 +5579,7 @@ class module_controller {
                    unset($sql);
                 
                   //add payment option field values
-                  $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_payment_option_values
+                  $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_payment_option_values
                                            (payment_option_id,reseller_ac_id_fk,
                                             field_name,field_value) VALUES(
                                             :option_id, :user_id, :field_name, :field_value);");
@@ -5609,7 +5609,7 @@ class module_controller {
 
            //delete payment method
            runtime_hook::Execute('OnBeforeDeletePaymentMethod');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_payment_methods 
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_payment_methods 
                                     SET method_deleted_ts='".time()."' 
                                     WHERE method_id=:id AND reseller_ac_id_fk=:user_id");
            $sql->bindParam(':user_id', $currentuser['userid']);
@@ -5629,7 +5629,7 @@ class module_controller {
 
         if($option_name && $field_labels && $field_names){
             //make sure we don't have an existing payment option with the same name
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_payment_options 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_payment_options 
                         WHERE payment_option_name=:name AND reseller_ac_id_fk=:user_id 
                         AND option_deleted_ts IS NULL";
             $numrows = $zdbh->prepare($sql);
@@ -5644,7 +5644,7 @@ class module_controller {
            
            runtime_hook::Execute('OnBeforeCreatePaymentOption');
            //add new payment option
-           $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_payment_options
+           $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_payment_options
                                  (payment_option_name,payment_option_form_html,
                                     enabled_yn,reseller_ac_id_fk
                                    ) VALUES (:name, :html, :enabled_yn, :user_id)");
@@ -5656,7 +5656,7 @@ class module_controller {
            
            //fetch newly created payment option id
             $numrows = $zdbh->prepare("SELECT payment_option_id 
-                                        FROM ".self::$module_db.".x_payment_options 
+                                        FROM sentora_xbilling.x_payment_options 
                                         WHERE reseller_ac_id_fk=:user_id AND payment_option_name=:name");
             $numrows->bindParam(':user_id', $currentuser['userid']);
             $numrows->bindParam(':name', $option_name);
@@ -5669,7 +5669,7 @@ class module_controller {
                 $lbl = trim(filter_var($field_labels[$fld_idx], FILTER_SANITIZE_STRING));
                 $fld = strtolower(trim(str_replace(' ','_',filter_var($fld, FILTER_SANITIZE_STRING))));
                 
-                $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_payment_option_fields
+                $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_payment_option_fields
                                          (payment_option_id,field_label,field_name
                                          ) VALUES (:id, :label, :name)");
                 $sql->bindParam(':label', $lbl);
@@ -5695,7 +5695,7 @@ class module_controller {
 
         if($option_id && $option_name && $field_labels && $field_names){
             //make sure we don't have an existing payment option with the same name
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_payment_options 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_payment_options 
                         WHERE payment_option_name=:name AND 
                         reseller_ac_id_fk=:user_id AND payment_option_id<>:id 
                         AND option_deleted_ts IS NULL";
@@ -5713,7 +5713,7 @@ class module_controller {
            //update payment option
            runtime_hook::Execute('OnBeforeUpdatePaymentOption');
             //delete existing payment option fields
-            $numrows = $zdbh->prepare("DELETE FROM ".self::$module_db.".x_payment_option_fields 
+            $numrows = $zdbh->prepare("DELETE FROM sentora_xbilling.x_payment_option_fields 
                                         WHERE payment_option_id=:id");
             $numrows->bindParam(':id', $option_id);
             $numrows->execute();
@@ -5723,7 +5723,7 @@ class module_controller {
                 $lbl = trim(filter_var($field_labels[$fld_idx], FILTER_SANITIZE_STRING));
                 $fld = strtolower(trim(str_replace(' ','_',filter_var($fld, FILTER_SANITIZE_STRING))));
                 
-                $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_payment_option_fields
+                $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_payment_option_fields
                                          (payment_option_id,field_label,field_name
                                          ) VALUES (:id, :label, :name)");
                 $sql->bindParam(':label', $lbl);
@@ -5732,7 +5732,7 @@ class module_controller {
                 $sql->execute();                
             }
            
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_payment_options
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_payment_options
                                     SET payment_option_name=:name, enabled_yn=:enabled_yn, 
                                     payment_option_form_html=:html
                                     WHERE reseller_ac_id_fk=:user_id AND payment_option_id=:id");
@@ -5759,7 +5759,7 @@ class module_controller {
 
            //delete payment option
            runtime_hook::Execute('OnBeforeDeletePaymentOption');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_payment_options 
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_payment_options 
                                     SET option_deleted_ts='".time()."' 
            WHERE payment_option_id=:id AND reseller_ac_id_fk=:user_id");
            $sql->bindParam(':user_id', $currentuser['userid']);
@@ -5767,7 +5767,7 @@ class module_controller {
            $sql->execute();
            
            //delete existing payment option fields
-           /*$numrows = $zdbh->prepare("DELETE FROM ".self::$module_db.".x_payment_option_fields 
+           /*$numrows = $zdbh->prepare("DELETE FROM sentora_xbilling.x_payment_option_fields 
                                        WHERE payment_option_id=:id");
            $numrows->bindParam(':id', $option_id);
            $numrows->execute();
@@ -5787,7 +5787,7 @@ class module_controller {
 
         if($order_id && $completed_yn){
             //make sure this order exists
-            $sql = "SELECT ac_id_fk FROM ".self::$module_db.".x_invoices 
+            $sql = "SELECT ac_id_fk FROM sentora_xbilling.x_invoices 
                         WHERE invoice_id=:id AND reseller_ac_id_fk=:user_id 
                         AND invoice_deleted_ts IS NULL";
             $numrows = $zdbh->prepare($sql);
@@ -5814,7 +5814,7 @@ class module_controller {
            //update payment option
            runtime_hook::Execute('OnBeforeUpdateOrder');
 
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_invoices
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_invoices
                                     SET invoice_status='1', payment_option_id='-1'
                                     WHERE reseller_ac_id_fk=:user_id AND invoice_id=:id");
            $sql->bindParam(':user_id', $currentuser['userid']);
@@ -5822,20 +5822,20 @@ class module_controller {
            $sql->execute();
            
            //find and update orders relating to this invoice
-            /*$sql = $zdbh->prepare("SELECT order_id FROM ".self::$module_db.".x_invoices_orders 
-                                        WHERE ".self::$module_db.".x_invoices_orders.invoice_id=:id
-                                        ORDER BY ".self::$module_db.".x_invoices_orders.order_id ASC;");*/
+            /*$sql = $zdbh->prepare("SELECT order_id FROM sentora_xbilling.x_invoices_orders 
+                                        WHERE sentora_xbilling.x_invoices_orders.invoice_id=:id
+                                        ORDER BY sentora_xbilling.x_invoices_orders.order_id ASC;");*/
                                         
-            $sql = $zdbh->prepare("SELECT * FROM ".self::$module_db.".x_invoices_orders 
-                                        INNER JOIN ".self::$module_db.".x_orders ON ".self::$module_db.".x_orders.order_id=".self::$module_db.".x_invoices_orders.order_id 
-                                        INNER JOIN ".self::$module_db.".x_invoices ON 
-                                        ".self::$module_db.".x_invoices.invoice_id=".self::$module_db.".x_invoices_orders.invoice_id 
+            $sql = $zdbh->prepare("SELECT * FROM sentora_xbilling.x_invoices_orders 
+                                        INNER JOIN sentora_xbilling.x_orders ON sentora_xbilling.x_orders.order_id=sentora_xbilling.x_invoices_orders.order_id 
+                                        INNER JOIN sentora_xbilling.x_invoices ON 
+                                        sentora_xbilling.x_invoices.invoice_id=sentora_xbilling.x_invoices_orders.invoice_id 
                                         INNER JOIN ".self::$server_app."_core.x_accounts ON ".self::$server_app."_core.x_accounts.ac_id_pk=x_invoices.ac_id_fk                                         
                                         INNER JOIN ".self::$server_app."_core.x_profiles ON ".self::$server_app."_core.x_profiles.ud_user_fk=".self::$server_app."_core.x_accounts.ac_id_pk                                         
-                                        WHERE ".self::$module_db.".x_invoices.invoice_id=:inv_id 
+                                        WHERE sentora_xbilling.x_invoices.invoice_id=:inv_id 
                                         AND invoice_deleted_ts IS NULL AND order_deleted_ts IS NULL 
-                                        GROUP BY ".self::$module_db.".x_invoices.invoice_id 
-                                        ORDER BY ".self::$module_db.".x_invoices.invoice_id ASC;");
+                                        GROUP BY sentora_xbilling.x_invoices.invoice_id 
+                                        ORDER BY sentora_xbilling.x_invoices.invoice_id ASC;");
                                         
             $sql->bindParam(':inv_id', $order_id);
             $sql->execute();
@@ -5845,7 +5845,7 @@ class module_controller {
             if(is_array($order)){
                 /*$orders['order_id'] = $order['order_id'];
                 $sql = $zdbh->prepare("SELECT order_vh_fk,package_period_id_fk FROM 
-                                            ".self::$module_db.".x_orders 
+                                            sentora_xbilling.x_orders 
                                             WHERE order_id=:id;");
                 $sql->bindParam(':id', $order['order_id']);
                 $sql->execute();
@@ -5880,10 +5880,10 @@ class module_controller {
                     //update domain expiration
                       if(isset($orders['order_vh_fk']) && isset($orders['package_period_id_fk'])){
                             $periods = $zdbh->prepare("SELECT period_duration 
-                                                         FROM ".self::$module_db.".x_periods INNER 
-                                                         JOIN ".self::$module_db.".x_packages_periods ON 
-                                                        ".self::$module_db.".x_packages_periods.period_id=".self::$module_db.".x_periods.period_id 
-                                                      WHERE ".self::$module_db.".x_packages_periods.package_period_id=:id 
+                                                         FROM sentora_xbilling.x_periods INNER 
+                                                         JOIN sentora_xbilling.x_packages_periods ON 
+                                                        sentora_xbilling.x_packages_periods.period_id=sentora_xbilling.x_periods.period_id 
+                                                      WHERE sentora_xbilling.x_packages_periods.package_period_id=:id 
                                                       AND period_deleted_ts IS NULL;");
                              $periods->bindParam(':id', $orders['package_period_id_fk']);
                              $periods->execute();
@@ -5918,7 +5918,7 @@ class module_controller {
                              }                                
                       }
                 
-                      $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_orders SET order_status='1', 
+                      $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_orders SET order_status='1', 
                                                 order_complete_dated='".date("Y-m-d H:i")."'
                                                 WHERE order_id=:id");
                       $sql->bindParam(':id', $orders['order_id']);
@@ -5958,7 +5958,7 @@ class module_controller {
 
         if($code && $discount){
             //make sure we don't have an existing voucher with the same code
-            $sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_vouchers 
+            $sql = "SELECT COUNT(*) FROM sentora_xbilling.x_vouchers 
                         WHERE voucher_code=:code AND reseller_ac_id_fk=:user_id 
                         AND voucher_deleted_ts IS NULL";
             $numrows = $zdbh->prepare($sql);
@@ -5973,7 +5973,7 @@ class module_controller {
            
            runtime_hook::Execute('OnBeforeCreateVoucher');
            //add new voucher
-           $sql = $zdbh->prepare("INSERT INTO ".self::$module_db.".x_vouchers (voucher_code,discount,reseller_ac_id_fk,active_yn,
+           $sql = $zdbh->prepare("INSERT INTO sentora_xbilling.x_vouchers (voucher_code,discount,reseller_ac_id_fk,active_yn,
            				discount_type,usage_type,voucher_created_ts
                                    ) VALUES (:code, :discount, :user_id, :active_yn, :discount_type, :usage_type, :date)");
            $sql->bindParam(':code', strtoupper($code));
@@ -6004,7 +6004,7 @@ class module_controller {
 
         if($discount && $voucher_id){
             //make sure we don't have an existing voucher with the same code SRATCH THE BELOW!! We are not changing the voucher code!
-            /*$sql = "SELECT COUNT(*) FROM ".self::$module_db.".x_periods 
+            /*$sql = "SELECT COUNT(*) FROM sentora_xbilling.x_periods 
 
                         WHERE period_id<>:period_id AND period_duration=:duration 
 
@@ -6022,7 +6022,7 @@ class module_controller {
             
            //update service period
            runtime_hook::Execute('OnBeforeUpdateVoucher');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_vouchers SET discount=:discount,
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_vouchers SET discount=:discount,
                                     active_yn=:active_yn, discount_type=:discount_type, usage_type=:usage_type
                                      WHERE reseller_ac_id_fk=:user_id AND voucher_id=:id");
            $sql->bindParam(':discount', $discount);
@@ -6051,7 +6051,7 @@ class module_controller {
 
            //delete discount voucher
            runtime_hook::Execute('OnBeforeDeleteVoucher');
-           $sql = $zdbh->prepare("UPDATE ".self::$module_db.".x_vouchers 
+           $sql = $zdbh->prepare("UPDATE sentora_xbilling.x_vouchers 
 
                                     SET voucher_deleted_ts='".time()."' 
                                     WHERE voucher_id=:id AND reseller_ac_id_fk=:user_id");

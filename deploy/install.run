@@ -170,13 +170,16 @@ function installModule(){
       $numrows->execute();
 
       //alter zpanel_core tables
-      $numrows = $zdbh->prepare("ALTER TABLE  ".$server_vars['app']."_core.`x_vhosts` ADD 
-                                    `vh_expiry_ts` INT(30) NOT NULL DEFAULT '0' AFTER  `vh_created_ts`,
-                                    ADD `vh_invoice_created_yn` tinyint(1) NOT NULL DEFAULT '0', 
-                                    ADD `expiration_reminder_sent_yn` tinyint(1) NOT NULL DEFAULT '0'
-                                    AFTER  `vh_expiry_ts`");
-      $numrows->execute();
-      
+      try {
+        $numrows = $zdbh->prepare("ALTER TABLE  ".$server_vars['app']."_core.`x_vhosts` ADD 
+                                      `vh_expiry_ts` INT(30) NOT NULL DEFAULT '0' AFTER  `vh_created_ts`,
+                                      ADD `vh_invoice_created_yn` tinyint(1) NOT NULL DEFAULT '0', 
+                                      ADD `expiration_reminder_sent_yn` tinyint(1) NOT NULL DEFAULT '0'
+                                      AFTER  `vh_expiry_ts`");
+        $numrows->execute();
+      } catch (Exception $e){
+        
+      }
       
       //Insert Default Records
       

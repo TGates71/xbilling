@@ -334,7 +334,6 @@ class webservice extends ws_xmws {
         }
     }
     
-    
     public function GetInvoiceInfo(){
         $request_data = ws_generic::XMLToArray($this->wsdata);
         $invoice_result['error'] = 0;
@@ -523,7 +522,17 @@ class webservice extends ws_xmws {
 
         return $dataobject->getDataObject();        
     }
-    
+
+    public function EnableClient() {
+        $request_data = ws_generic::XMLToArray($this->wsdata);
+        $contenttags = $this->XMLDataToArray($request_data['content']);
+        module_controller::EnableClient($contenttags['uid']);
+        $dataobject = new runtime_dataobject();
+        $dataobject->addItemValue('response', '');
+        $dataobject->addItemValue('content', ws_xmws::NewXMLTag('uid', $contenttags['uid']) . ws_xmws::NewXMLTag('enabled', 'true'));
+        return $dataobject->getDataObject();
+    }
+	
     public function InvoiceReminder(){
        $request_data = ws_generic::XMLToArray($this->wsdata);
         if((isset($request_data['xmws']['content']['zpx_uid']) && $request_data['xmws']['content']['zpx_uid'] > 0)){
